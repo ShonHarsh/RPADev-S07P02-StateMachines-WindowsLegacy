@@ -1,0 +1,695 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="1189,1842" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Sequence Main" sap:VirtualizedContainerService.HintSize="712,1677" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="itemCosts" />
+      <Variable x:TypeArguments="x:String" Default="Select a beverage" Name="dialogDispenseLabel" />
+      <Variable x:TypeArguments="x:String" Default="ItemKey" Name="itemKey" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence sap2010:Annotation.AnnotationText="The Vending Machine&#xA;&#xA;Create a workflow that simulates a vending machine. The functionality should be the following:&#xA;&#xA;The user is asked to choose the initial credit ($5, $10, $20) and to choose if he/she wants to proceed or if they changed their mind and want to get the change;&#xA;If they want to continue: They are asked what drink they want: Coffee ($3) or Tea ($2).&#xA;Next, the vending machine should check if the user has enough credit for selected drink. If Yes, display a success message and subtract the price of the drink from the total amount.&#xA;&#xA;The user is then asked if he/she wants to buy another drink or to get the change.&#xA;&#xA;If they want to get the change, a message box is displayed with the value of the change to be given to the customer." DisplayName="Sequence ExcelToDataTable Workflow" sap:VirtualizedContainerService.HintSize="670,909" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Default="C:\Cloud\Dropbox\Code\Robotic Process Automation\Projects\RPA Developer Foundation\RPADev-S07P02-StateMachines\Vending-Items.xlsx" Name="filePath" />
+        <Variable x:TypeArguments="x:String" Default="Sheet1" Name="fileSheetName" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ExcelToDataTable workflow" sap:VirtualizedContainerService.HintSize="346,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="ExcelToDataTable.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:String" x:Key="filePath">
+            <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33">filePath</mca:CSharpValue>
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="sheetName">
+            <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_34">fileSheetName</mca:CSharpValue>
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="sheetRange">
+            <Literal x:TypeArguments="x:String" Value="" />
+          </InArgument>
+          <OutArgument x:TypeArguments="sd:DataTable" x:Key="dataTable">
+            <mca:CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_18">itemCosts</mca:CSharpReference>
+          </OutArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+      <Sequence DisplayName="Sequence Key Column" sap:VirtualizedContainerService.HintSize="346,368" sap2010:WorkflowViewState.IdRef="Sequence_15">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Sequence DisplayName="Sequence Add Integer Column" sap:VirtualizedContainerService.HintSize="304,22" sap2010:WorkflowViewState.IdRef="Sequence_13">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:Int32" Default="0" Name="rowNumber" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:AddDataColumn x:TypeArguments="x:Int32" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" sap2010:Annotation.AnnotationText="Add the index column to the itemCosts data table." DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="510,64" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2">
+            <ui:AddDataColumn.ColumnName>
+              <InArgument x:TypeArguments="x:String">
+                <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_53">itemKey</mca:CSharpValue>
+              </InArgument>
+            </ui:AddDataColumn.ColumnName>
+            <ui:AddDataColumn.DataTable>
+              <InArgument x:TypeArguments="sd:DataTable">
+                <mca:CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_52">itemCosts</mca:CSharpValue>
+              </InArgument>
+            </ui:AddDataColumn.DataTable>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:AddDataColumn>
+          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Set the ItemKey column value" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="510,533" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+            <ui:ForEachRow.Body>
+              <ActivityAction x:TypeArguments="sd:DataRow">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,382" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">
+                        <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_23">rowNumber</mca:CSharpReference>
+                      </OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">
+                        <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_55">rowNumber + 1</mca:CSharpValue>
+                      </InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:UpdateRowItem ColumnIndex="{x:Null}" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="434,190" sap2010:WorkflowViewState.IdRef="UpdateRowItem_2">
+                    <ui:UpdateRowItem.ColumnName>
+                      <InArgument x:TypeArguments="x:String">
+                        <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_58">itemKey.ToString()</mca:CSharpValue>
+                      </InArgument>
+                    </ui:UpdateRowItem.ColumnName>
+                    <ui:UpdateRowItem.Row>
+                      <InArgument x:TypeArguments="sd:DataRow">
+                        <mca:CSharpValue x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpValue`1_57">CurrentRow</mca:CSharpValue>
+                      </InArgument>
+                    </ui:UpdateRowItem.Row>
+                    <ui:UpdateRowItem.Value>
+                      <InArgument x:TypeArguments="x:Object">
+                        <mca:CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_56">rowNumber</mca:CSharpValue>
+                      </InArgument>
+                    </ui:UpdateRowItem.Value>
+                  </ui:UpdateRowItem>
+                </Sequence>
+              </ActivityAction>
+            </ui:ForEachRow.Body>
+            <ui:ForEachRow.DataTable>
+              <InArgument x:TypeArguments="sd:DataTable">
+                <mca:CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_54">itemCosts</mca:CSharpValue>
+              </InArgument>
+            </ui:ForEachRow.DataTable>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:ForEachRow>
+        </Sequence>
+        <Sequence DisplayName="Sequence Build DialogDispenseLabel" sap:VirtualizedContainerService.HintSize="304,214" sap2010:WorkflowViewState.IdRef="Sequence_14">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:OutputDataTable DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_2">
+            <ui:OutputDataTable.DataTable>
+              <InArgument x:TypeArguments="sd:DataTable">
+                <mca:CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_59">itemCosts</mca:CSharpValue>
+              </InArgument>
+            </ui:OutputDataTable.DataTable>
+            <ui:OutputDataTable.Text>
+              <OutArgument x:TypeArguments="x:String">
+                <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_27">dialogDispenseLabel</mca:CSharpReference>
+              </OutArgument>
+            </ui:OutputDataTable.Text>
+          </ui:OutputDataTable>
+          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">
+                <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_28">dialogDispenseLabel</mca:CSharpReference>
+              </OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">
+                <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_60">"Select a beverage by typing the key in the input field. " + Environment.NewLine + dialogDispenseLabel</mca:CSharpValue>
+              </InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </Sequence>
+    </Sequence>
+    <StateMachine InitialState="{x:Reference __ReferenceID2}" DisplayName="State Machine" sap:VirtualizedContainerService.HintSize="670,636" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+          <x:Double x:Key="StateContainerWidth">636</x:Double>
+          <x:Double x:Key="StateContainerHeight">600</x:Double>
+          <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,118</av:PointCollection>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <State x:Name="__ReferenceID2" DisplayName="Credit State" sap:VirtualizedContainerService.HintSize="195,144" sap2010:WorkflowViewState.IdRef="State_2">
+        <State.Entry>
+          <Sequence DisplayName="Sequence Dialog" sap:VirtualizedContainerService.HintSize="653,1381" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="611,238" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False">
+              <ui:InputDialog.Label>
+                <InArgument x:TypeArguments="x:String">
+                  <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">dialogLabel</mca:CSharpValue>
+                </InArgument>
+              </ui:InputDialog.Label>
+              <ui:InputDialog.Result>
+                <OutArgument x:TypeArguments="x:String">
+                  <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">dialogUserInput</mca:CSharpReference>
+                </OutArgument>
+              </ui:InputDialog.Result>
+              <ui:InputDialog.Title>
+                <InArgument x:TypeArguments="x:String">
+                  <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">dialogTitle</mca:CSharpValue>
+                </InArgument>
+              </ui:InputDialog.Title>
+            </ui:InputDialog>
+            <Assign DisplayName="Assign AmountCredit" sap:VirtualizedContainerService.HintSize="611,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">
+                  <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_17">amountCredit</mca:CSharpReference>
+                </OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">
+                  <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_36">Convert.ToInt32(dialogUserInput)</mca:CSharpValue>
+                </InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="This workflow will validate if the input amoun&#xA;" DisplayName="Invoke LegalTenderUSA workflow" sap:VirtualizedContainerService.HintSize="611,154" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="LegalTenderUSA.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_input">
+                  <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_37">amountCredit</mca:CSharpValue>
+                </InArgument>
+                <OutArgument x:TypeArguments="x:Boolean" x:Key="out_isValid">
+                  <mca:CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_14">isValidLegalTender</mca:CSharpReference>
+                </OutArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:InvokeWorkflowFile>
+            <If DisplayName="If Not Legal Bill" sap:VirtualizedContainerService.HintSize="611,237" sap2010:WorkflowViewState.IdRef="If_4">
+              <If.Condition>
+                <InArgument x:TypeArguments="x:Boolean">
+                  <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_24">isValidLegalTender == false</mca:CSharpValue>
+                </InArgument>
+              </If.Condition>
+              <If.Then>
+                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_5">
+                  <ui:MessageBox.Text>
+                    <InArgument x:TypeArguments="x:Object">
+                      <mca:CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_35" xml:space="preserve">amountCredit + " is an invalid amount.  Crediting $1 and charging account amount plus a $5 transaction charge and a $5 shyster fee."</mca:CSharpValue>
+                    </InArgument>
+                  </ui:MessageBox.Text>
+                </ui:MessageBox>
+              </If.Then>
+            </If>
+            <Sequence sap2010:Annotation.AnnotationText="Prompt the user to order items or cash out." DisplayName="Sequence Order &amp; Cash Out" sap:VirtualizedContainerService.HintSize="611,440" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:MessageBox Caption="{x:Null}" Buttons="YesNo" DisplayName="Order Or Cash Out" sap:VirtualizedContainerService.HintSize="569,59" sap2010:WorkflowViewState.IdRef="MessageBox_3">
+                <ui:MessageBox.ChosenButton>
+                  <OutArgument x:TypeArguments="x:String">
+                    <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_12">orderItemsInput</mca:CSharpReference>
+                  </OutArgument>
+                </ui:MessageBox.ChosenButton>
+                <ui:MessageBox.Text>
+                  <InArgument x:TypeArguments="x:Object">
+                    <mca:CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">"Press 'YES' to order; 'NO' to cash out."</mca:CSharpValue>
+                  </InArgument>
+                </ui:MessageBox.Text>
+              </ui:MessageBox>
+              <If DisplayName="If OrderItems" sap:VirtualizedContainerService.HintSize="569,218" sap2010:WorkflowViewState.IdRef="If_5">
+                <If.Condition>
+                  <InArgument x:TypeArguments="x:Boolean">
+                    <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_50">orderItemsInput == "Yes"</mca:CSharpValue>
+                  </InArgument>
+                </If.Condition>
+                <If.Then>
+                  <Assign DisplayName="OrderItemsInput True" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">
+                        <mca:CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_13">orderItems</mca:CSharpReference>
+                      </OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </If.Then>
+                <If.Else>
+                  <Assign DisplayName="OrderItemsInput False" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">
+                        <mca:CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_32">orderItems</mca:CSharpReference>
+                      </OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </If.Else>
+              </If>
+            </Sequence>
+          </Sequence>
+        </State.Entry>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">202.5,118</av:Point>
+            <av:Size x:Key="ShapeSize">195,144</av:Size>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Double x:Key="StateContainerWidth">161.33767509586392</x:Double>
+            <x:Double x:Key="StateContainerHeight">108.23488653330458</x:Double>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <State.Transitions>
+          <Transition DisplayName="OrderItems" sap:VirtualizedContainerService.HintSize="450,505" sap2010:WorkflowViewState.IdRef="Transition_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <av:PointCollection x:Key="ConnectorLocation">202.5,247.6 110,247.6 110,315.5</av:PointCollection>
+                <x:Int32 x:Key="SrcConnectionPointIndex">69</x:Int32>
+                <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Transition.Condition>
+              <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">orderItems == true</mca:CSharpValue>
+            </Transition.Condition>
+            <Transition.To>
+              <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="This state is the purshasing iteration." DisplayName="Dispense State" sap:VirtualizedContainerService.HintSize="1174,1924" sap2010:WorkflowViewState.IdRef="State_3">
+                <State.Entry>
+                  <Sequence DisplayName="Sequence Dispense" sap:VirtualizedContainerService.HintSize="1128,1506" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Sequence DisplayName="Sequence Dialog" sap:VirtualizedContainerService.HintSize="1086,1414" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:Int32" Name="dialogDispenseInputInt" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="1044,238" sap2010:WorkflowViewState.IdRef="InputDialog_3" IsPassword="False">
+                        <ui:InputDialog.Label>
+                          <InArgument x:TypeArguments="x:String">
+                            <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_27">dialogDispenseLabel</mca:CSharpValue>
+                          </InArgument>
+                        </ui:InputDialog.Label>
+                        <ui:InputDialog.Result>
+                          <OutArgument x:TypeArguments="x:String">
+                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_15">dialogDispenseInput</mca:CSharpReference>
+                          </OutArgument>
+                        </ui:InputDialog.Result>
+                        <ui:InputDialog.Title>
+                          <InArgument x:TypeArguments="x:String">
+                            <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26">dialogDispenseTitle</mca:CSharpValue>
+                          </InArgument>
+                        </ui:InputDialog.Title>
+                      </ui:InputDialog>
+                      <Assign sap:VirtualizedContainerService.HintSize="1044,60" sap2010:WorkflowViewState.IdRef="Assign_14">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Int32">
+                            <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_33">dialogDispenseInputInt</mca:CSharpReference>
+                          </OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Int32">
+                            <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_64">Convert.ToInt32(dialogDispenseInput)</mca:CSharpValue>
+                          </InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Sequence DisplayName="Evaluate Credit" sap:VirtualizedContainerService.HintSize="1044,944" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="x:String" Name="creditFailText">
+                            <Variable.Default>
+                              <Literal x:TypeArguments="x:String">Insufficient funds; cashing out.</Literal>
+                            </Variable.Default>
+                          </Variable>
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <If DisplayName="If Credit Fail" sap:VirtualizedContainerService.HintSize="1002,852" sap2010:WorkflowViewState.IdRef="If_8">
+                          <If.Condition>
+                            <InArgument x:TypeArguments="x:Boolean">
+                              <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_65">amountCredit - dialogDispenseInputInt &lt;= 0</mca:CSharpValue>
+                            </InArgument>
+                          </If.Condition>
+                          <If.Then>
+                            <Sequence DisplayName="Sequence Credit Fail" sap:VirtualizedContainerService.HintSize="304,253" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <WriteLine DisplayName="Write Line Credit Fail" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="WriteLine_2">
+                                <InArgument x:TypeArguments="x:String">
+                                  <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_66">creditFailText</mca:CSharpValue>
+                                </InArgument>
+                              </WriteLine>
+                              <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_15">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Boolean">
+                                    <mca:CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_34">orderItems</mca:CSharpReference>
+                                  </OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence sap2010:Annotation.AnnotationText="Prompt the user to order items or cash out." DisplayName="Sequence Order &amp; Cash Out" sap:VirtualizedContainerService.HintSize="653,694" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:MessageBox Caption="{x:Null}" Buttons="YesNo" DisplayName="Order Or Cash Out" sap:VirtualizedContainerService.HintSize="611,59" sap2010:WorkflowViewState.IdRef="MessageBox_7">
+                                <ui:MessageBox.ChosenButton>
+                                  <OutArgument x:TypeArguments="x:String">
+                                    <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_29">orderItemsInput</mca:CSharpReference>
+                                  </OutArgument>
+                                </ui:MessageBox.ChosenButton>
+                                <ui:MessageBox.Text>
+                                  <InArgument x:TypeArguments="x:Object">
+                                    <mca:CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_61">"Press 'YES' to order; 'NO' to cash out."</mca:CSharpValue>
+                                  </InArgument>
+                                </ui:MessageBox.Text>
+                              </ui:MessageBox>
+                              <If DisplayName="If OrderItems" sap:VirtualizedContainerService.HintSize="611,472" sap2010:WorkflowViewState.IdRef="If_7">
+                                <If.Condition>
+                                  <InArgument x:TypeArguments="x:Boolean">
+                                    <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_62">orderItemsInput == "Yes"</mca:CSharpValue>
+                                  </InArgument>
+                                </If.Condition>
+                                <If.Then>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="304,314" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                    <Sequence.Variables>
+                                      <Variable x:TypeArguments="x:Int32" Name="inputValueCost">
+                                        <Variable.Default>
+                                          <Literal x:TypeArguments="x:Int32" />
+                                        </Variable.Default>
+                                      </Variable>
+                                    </Sequence.Variables>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign DisplayName="OrderItemsInput True" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_16">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:Boolean">
+                                          <mca:CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_35">orderItems</mca:CSharpReference>
+                                        </OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                    <ui:LookupDataTable LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" RowIndex="{x:Null}" TargetColumnIndex="{x:Null}" TargetDataColumn="{x:Null}" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" TargetColumnName="Cost">
+                                      <ui:LookupDataTable.CellValue>
+                                        <OutArgument x:TypeArguments="x:Int32">
+                                          <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_38">inputValueCost</mca:CSharpReference>
+                                        </OutArgument>
+                                      </ui:LookupDataTable.CellValue>
+                                      <ui:LookupDataTable.DataTable>
+                                        <InArgument x:TypeArguments="sd:DataTable">
+                                          <mca:CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_67">itemCosts</mca:CSharpValue>
+                                        </InArgument>
+                                      </ui:LookupDataTable.DataTable>
+                                      <ui:LookupDataTable.LookupColumnName>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_72">itemKey</mca:CSharpValue>
+                                        </InArgument>
+                                      </ui:LookupDataTable.LookupColumnName>
+                                      <ui:LookupDataTable.LookupValue>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_70">dialogDispenseInput</mca:CSharpValue>
+                                        </InArgument>
+                                      </ui:LookupDataTable.LookupValue>
+                                    </ui:LookupDataTable>
+                                    <Assign DisplayName="Update Credit" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_17">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:Int32">
+                                          <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_36">amountCredit</mca:CSharpReference>
+                                        </OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:Int32">
+                                          <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_73">amountCredit - inputValueCost</mca:CSharpValue>
+                                        </InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Then>
+                                <If.Else>
+                                  <Assign DisplayName="OrderItemsInput False" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Boolean">
+                                        <mca:CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_31">orderItems</mca:CSharpReference>
+                                      </OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                </If.Else>
+                              </If>
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                      </Sequence>
+                    </Sequence>
+                  </Sequence>
+                </State.Entry>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <av:Point x:Key="ShapeLocation">12.5,315.5</av:Point>
+                    <av:Size x:Key="ShapeSize">195,191</av:Size>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    <x:Double x:Key="StateContainerWidth">160.71193311165985</x:Double>
+                    <x:Double x:Key="StateContainerHeight">113.29912053404894</x:Double>
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <State.Transitions>
+                  <Transition DisplayName="OrderItems" sap2010:WorkflowViewState.IdRef="Transition_5">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <av:PointCollection x:Key="ConnectorLocation">207.5,458.75 237.5,458.75 237.5,372.8 207.5,372.8</av:PointCollection>
+                        <x:Int32 x:Key="SrcConnectionPointIndex">56</x:Int32>
+                        <x:Int32 x:Key="DestConnectionPointIndex">20</x:Int32>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Transition.To>
+                      <x:Reference>__ReferenceID0</x:Reference>
+                    </Transition.To>
+                    <Transition.Condition>
+                      <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_31">orderItems == true</mca:CSharpValue>
+                    </Transition.Condition>
+                  </Transition>
+                  <Transition DisplayName="CashOut" sap2010:WorkflowViewState.IdRef="Transition_6">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <av:PointCollection x:Key="ConnectorLocation">110,506.5 110,536.5 499.5,536.5 499.5,468.5</av:PointCollection>
+                        <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
+                        <x:Int32 x:Key="DestConnectionPointIndex">39</x:Int32>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Transition.Condition>
+                      <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_32">orderItems == false</mca:CSharpValue>
+                    </Transition.Condition>
+                    <Transition.To>
+                      <State x:Name="__ReferenceID1" DisplayName="Final State" sap:VirtualizedContainerService.HintSize="190,162" sap2010:WorkflowViewState.IdRef="State_5" IsFinal="True">
+                        <State.Entry>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_1">
+                            <InArgument x:TypeArguments="x:String">
+                              <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_74" xml:space="preserve">"Transaction completed.  Depositing " + amountCredit + " in cash returns."</mca:CSharpValue>
+                            </InArgument>
+                          </WriteLine>
+                        </State.Entry>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <av:Point x:Key="ShapeLocation">404.5,306.5</av:Point>
+                            <av:Size x:Key="ShapeSize">190,162</av:Size>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Double x:Key="StateContainerWidth">156</x:Double>
+                            <x:Double x:Key="StateContainerHeight">125.63200000000006</x:Double>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </State>
+                    </Transition.To>
+                  </Transition>
+                </State.Transitions>
+                <State.Variables>
+                  <Variable x:TypeArguments="x:String" Name="dialogDispenseInput">
+                    <Variable.Default>
+                      <Literal x:TypeArguments="x:String" Value="" />
+                    </Variable.Default>
+                  </Variable>
+                  <Variable x:TypeArguments="x:String" Default="Select Item" Name="dialogDispenseTitle" />
+                </State.Variables>
+              </State>
+            </Transition.To>
+          </Transition>
+          <Transition DisplayName="CashOut" sap:VirtualizedContainerService.HintSize="450,507" sap2010:WorkflowViewState.IdRef="Transition_4">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <av:PointCollection x:Key="ConnectorLocation">397.5,247.6 498.5,247.6 498.5,306.5</av:PointCollection>
+                <x:Int32 x:Key="SrcConnectionPointIndex">68</x:Int32>
+                <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Transition.To>
+              <x:Reference>__ReferenceID1</x:Reference>
+            </Transition.To>
+            <Transition.Condition>
+              <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">orderItems == false</mca:CSharpValue>
+            </Transition.Condition>
+          </Transition>
+        </State.Transitions>
+        <State.Variables>
+          <Variable x:TypeArguments="x:String" Default="Please feed a crumpled bill into the machine ." Name="dialogLabel" />
+          <Variable x:TypeArguments="x:String" Name="dialogUserInput">
+            <Variable.Default>
+              <Literal x:TypeArguments="x:String" Value="" />
+            </Variable.Default>
+          </Variable>
+          <Variable x:TypeArguments="x:String" Default="Credit" Name="dialogTitle" />
+        </State.Variables>
+      </State>
+      <x:Reference>__ReferenceID0</x:Reference>
+      <x:Reference>__ReferenceID1</x:Reference>
+      <StateMachine.Variables>
+        <Variable x:TypeArguments="x:Int32" Default="0" Name="amountCredit" />
+        <Variable x:TypeArguments="x:Boolean" Default="False" Name="isValidLegalTender" />
+        <Variable x:TypeArguments="x:Boolean" Name="orderItems">
+          <Variable.Default>
+            <Literal x:TypeArguments="x:Boolean" />
+          </Variable.Default>
+        </Variable>
+        <Variable x:TypeArguments="x:String" Name="orderItemsInput" />
+      </StateMachine.Variables>
+    </StateMachine>
+  </Sequence>
+</Activity>
