@@ -21,12 +21,17 @@ After making a pull request or downloading the project, open the Main.xaml in Ui
 Sample Output
 
 ```
-//ToDo
+09/28/2021 16:37:51 => [Debug] Execution started for project: RPADev-S07P02-StateMachines
+09/28/2021 16:37:53 => [Info] RPADev-S07P02-StateMachines execution started
+09/28/2021 16:38:08 => [Debug] Dispensing a cold Cheerwine below.
+09/28/2021 16:38:13 => [Debug] Dispensing a cold Dr. Pepper below.
+09/28/2021 16:38:18 => [Debug] Transaction completed.  Depositing $5 in change [likely pennies].
+09/28/2021 16:38:18 => [Info] RPADev-S07P02-StateMachines execution ended in: 00:00:24
 ```
 
 ### Notes
 
-//Notes - This project is still in development
+I feel that this project could have had more states that involve the input validation and computation events.  I initially thought of the states as interaction points with the user but realized more states could have been used for the said validations; thus this was a great learning project!
 
 ### RPA Developer Foundation Sections
 
