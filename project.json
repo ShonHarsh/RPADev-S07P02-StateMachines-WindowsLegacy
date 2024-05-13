@@ -1,12 +1,12 @@
 {
-  "name": "RPADev-S07P02-StateMachines",
+  "name": "RPADev-S07P02-StateMachines-WindowsLegacy",
+  "projectId": "66f47de8-1004-41cb-85ae-90037d459e67",
   "description": "\r\nPractice 2 - State Machines\r\n\r\nThe Vending Machine\r\n\r\nCreate a workflow that simulates a vending machine. The functionality should be the following:\r\n\r\nThe user is asked to choose the initial credit ($5, $10, $20) and to choose if he/she wants to proceed or if they changed their mind and want to get the change;\r\nIf they want to continue: They are asked what drink they want: Coffee ($3) or Tea ($2).\r\nNext, the vending machine should check if the user has enough credit for selected drink. If Yes",
   "main": "Main.xaml",
   "dependencies": {
-    "UiPath.Excel.Activities": "[2.10.4]",
-    "UiPath.Mail.Activities": "[1.10.5]",
-    "UiPath.System.Activities": "[21.4.1]",
-    "UiPath.UIAutomation.Activities": "[21.4.4]"
+    "UiPath.Excel.Activities": "[2.23.3-preview]",
+    "UiPath.System.Activities": "[24.3.1]",
+    "UiPath.UIAutomation.Activities": "[24.4.2-preview]"
   },
   "webServices": [],
   "entitiesStores": [],
@@ -15,16 +15,21 @@
   "projectVersion": "1.0.0",
   "runtimeOptions": {
     "autoDispose": false,
+    "netFrameworkLazyLoading": false,
     "isPausable": true,
+    "isAttended": false,
     "requiresUserInteraction": true,
     "supportsPersistence": false,
+    "workflowSerialization": "DataContract",
     "excludedLoggedData": [
       "Private:*",
       "*password*"
     ],
     "executionType": "Workflow",
     "readyForPiP": false,
-    "startsInPiP": false
+    "startsInPiP": false,
+    "mustRestoreAllDependencies": false,
+    "pipType": "ChildSession"
   },
   "designOptions": {
     "projectProfile": "Developement",
@@ -37,7 +42,7 @@
       "ignoredFiles": []
     },
     "fileInfoCollection": [],
-    "modernBehavior": true
+    "saveToCloud": false
   },
   "expressionLanguage": "CSharp",
   "entryPoints": [
